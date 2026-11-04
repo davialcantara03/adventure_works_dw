@@ -7,7 +7,7 @@ source as (
 renamed as (
     select 
        countryregioncode as pk_pais
-       name as nome_pais
+       , name as nome_pais
     from source
 )
 
