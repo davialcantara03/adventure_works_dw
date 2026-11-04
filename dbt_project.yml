@@ -1,0 +1,24 @@
+name: 'adventure_works_dw'
+version: '1.0.0'
+config-version: 2
+
+profile: 'adventure_works_dw'
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+test-paths: ["tests"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  adventure_works_dw:
+    staging:
+      +materialized: view
+    intermediate:
+      +materialized: view
+    marts:
+      +materialized: table
