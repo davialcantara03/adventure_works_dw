@@ -1,0 +1,45 @@
+version: 2
+
+models:
+  - name: int_produto
+    description: Produtos com subcategoria e categoria. Uma linha por produto.
+    columns:
+      - name: pk_produto
+        data_tests:
+          - unique
+          - not_null
+
+  - name: int_local
+    description: Endereços com estado e país. Uma linha por endereço.
+    columns:
+      - name: pk_endereco
+        data_tests:
+          - unique
+          - not_null
+
+  - name: int_cliente
+    description: Clientes com dados da pessoa. Uma linha por cliente.
+    columns:
+      - name: pk_cliente
+        data_tests:
+          - unique
+          - not_null
+
+  - name: int_vendedor
+    description: Vendedores com dados da pessoa e território. Uma linha por vendedor.
+    columns:
+      - name: pk_vendedor
+        data_tests:
+          - unique
+          - not_null
+
+  - name: int_pedido_motivo
+    description: Ponte entre pedido e motivo de venda, com o nome do motivo. Uma linha por par pedido e motivo.
+
+  - name: int_pedido_item
+    description: Itens dos pedidos com cabeçalho e total da linha. Uma linha por item.
+    columns:
+      - name: pk_pedido_item
+        data_tests:
+          - unique
+          - not_null
