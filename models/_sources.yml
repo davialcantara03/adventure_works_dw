@@ -87,6 +87,9 @@ sources:
               - not_null
       - name: person_countryregion
         columns:
+          # Exceção de dados: 1 registro (Namíbia) com countryregioncode nulo na origem.
+          # Tratado em stg_person_countryregion com coalesce para 'NA'. Impacto: zero pedidos.
+          # Teste mantido como erro para registrar o problema. Ver PR de staging.
           - name: countryregioncode
             data_tests:
               - unique
