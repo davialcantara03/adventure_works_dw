@@ -6,16 +6,91 @@ sources:
     schema: adventure_works
     tables:
       - name: sales_salesorderheader
+        columns:
+          - name: salesorderid
+            data_tests:
+              - unique
+              - not_null
       - name: sales_salesorderdetail
+        columns:
+          - name: salesorderdetailid
+            data_tests:
+              - unique
+              - not_null
       - name: sales_customer
+        columns:
+          - name: customerid
+            data_tests:
+              - unique
+              - not_null
       - name: sales_salesreason
+        columns:
+          - name: salesreasonid
+            data_tests:
+              - unique
+              - not_null
       - name: sales_salesorderheadersalesreason
+        columns:
+          - name: salesorderid
+            data_tests:
+              - not_null
+          - name: salesreasonid
+            data_tests:
+              - not_null
       - name: sales_creditcard
+        columns:
+          - name: creditcardid
+            data_tests:
+              - unique
+              - not_null
       - name: sales_salesperson
+        columns:
+          - name: businessentityid
+            data_tests:
+              - unique
+              - not_null
       - name: production_product
+        columns:
+          - name: productid
+            data_tests:
+              - unique
+              - not_null
       - name: production_productsubcategory
+        columns:
+          - name: productsubcategoryid
+            data_tests:
+              - unique
+              - not_null
       - name: production_productcategory
+        columns:
+          - name: productcategoryid
+            data_tests:
+              - unique
+              - not_null
       - name: person_person
+        columns:
+          - name: businessentityid
+            data_tests:
+              - unique
+              - not_null
       - name: person_address
+        columns:
+          - name: addressid
+            data_tests:
+              - unique
+              - not_null
       - name: person_stateprovince
+        columns:
+          - name: stateprovinceid
+            data_tests:
+              - unique
+              - not_null
       - name: person_countryregion
+        columns:
+          # Exceção de dados: 1 registro (Namíbia) com countryregioncode nulo na origem.
+          # Tratado em stg_person_countryregion com coalesce para 'NA'. Impacto: zero pedidos.
+          # Teste mantido como erro para registrar o problema. Ver PR de staging.
+          - name: countryregioncode
+            data_tests:
+              - unique
+              - not_null

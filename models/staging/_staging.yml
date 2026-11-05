@@ -1,0 +1,109 @@
+version: 2
+
+models:
+  - name: stg_sales_salesreason
+    description: Motivos de venda registrados nos pedidos.
+    columns:
+      - name: pk_motivo_venda
+        data_tests:
+          - unique
+          - not_null
+
+  - name: stg_sales_salesorderheadersalesreason
+    description: Ponte entre pedido e motivo de venda.
+
+  - name: stg_production_productcategory
+    description: Categorias de produto.
+    columns:
+      - name: pk_categoria
+        data_tests:
+          - unique
+          - not_null
+
+  - name: stg_production_productsubcategory
+    description: Subcategorias de produto, ligadas a uma categoria.
+    columns:
+      - name: pk_subcategoria
+        data_tests:
+          - unique
+          - not_null
+
+  - name: stg_production_product
+    description: Produtos vendidos.
+    columns:
+      - name: pk_produto
+        data_tests:
+          - unique
+          - not_null
+
+  - name: stg_sales_customer
+    description: Clientes, com vínculo a pessoa ou loja.
+    columns:
+      - name: pk_cliente
+        data_tests:
+          - unique
+          - not_null
+
+  - name: stg_person_person
+    description: Pessoas cadastradas, usadas para identificar clientes e vendedores.
+    columns:
+      - name: pk_pessoa
+        data_tests:
+          - unique
+          - not_null
+
+  - name: stg_person_address
+    description: Endereços cadastrados, com cidade e vínculo ao estado.
+    columns:
+      - name: pk_endereco
+        data_tests:
+          - unique
+          - not_null
+
+  - name: stg_person_stateprovince
+    description: Estados e províncias, com vínculo ao país.
+    columns:
+      - name: pk_estado
+        data_tests:
+          - unique
+          - not_null
+
+  - name: stg_person_countryregion
+    description: Países, com código ISO. Um registro (Namíbia) tem código tratado com 'NA' (ver README).
+    columns:
+      - name: pk_pais
+        data_tests:
+          - unique
+          - not_null
+
+  - name: stg_sales_salesorderheader
+    description: Cabeçalho dos pedidos de venda. Uma linha por pedido.
+    columns:
+      - name: pk_pedido
+        data_tests:
+          - unique
+          - not_null
+
+  - name: stg_sales_salesorderdetail
+    description: Itens dos pedidos de venda. Uma linha por item.
+    columns:
+      - name: pk_pedido_item
+        data_tests:
+          - unique
+          - not_null
+
+  - name: stg_sales_creditcard
+    description: Cartões de crédito usados nos pedidos.
+    columns:
+      - name: pk_cartao
+        data_tests:
+          - unique
+          - not_null
+
+  - name: stg_sales_salesperson
+    description: Vendedores, com vínculo à pessoa e ao território.
+    columns:
+      - name: pk_vendedor
+        data_tests:
+          - unique
+          - not_null
