@@ -7,7 +7,7 @@ datas as (
     where data_pedido is not null
 ),
 
-dim as (
+final as (
     select
         data_pedido as pk_data
         , data_pedido as data
@@ -17,4 +17,4 @@ dim as (
     from datas
 )
 
-select * from dim
+select * from final
