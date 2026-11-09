@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: dim_cartao
+    description: Tipo de cartão usado nas vendas.
+    columns:
+      - name: pk_cartao
+        description: Identificador único do cartão, derivado de creditcardid da origem
+        data_tests:
+          - unique
+          - not_null
+      - name: tipo_cartao
+        description: Tipo de cartão utilizado

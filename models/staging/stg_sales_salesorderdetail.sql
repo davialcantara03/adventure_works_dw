@@ -13,9 +13,8 @@ renamed as (
         , productid as fk_produto
         , specialofferid as fk_oferta
         , cast(orderqty as integer) as quantidade
-        , cast(unitprice as decimal(18, 2)) as preco_unitario
-        , cast(unitpricediscount as decimal(18, 2)) as desconto_unitario
-
+        , unitprice as preco_unitario
+        , unitpricediscount as desconto_unitario
 from source
 
 )

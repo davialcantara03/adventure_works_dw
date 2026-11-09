@@ -7,7 +7,7 @@ itens as (
 final as (
     select
         pk_pedido_item
-        , pk_pedido
+        , fk_pedido
         , fk_produto
         , fk_cliente
         , fk_vendedor
@@ -20,7 +20,8 @@ final as (
         , quantidade
         , preco_unitario
         , desconto_unitario
-        , total_linha
+        , total_bruto_linha
+        , total_liquido_linha
     from itens
 )
 

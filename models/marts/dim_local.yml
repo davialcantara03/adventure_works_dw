@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: dim_local
+    description: Localidades de entrega dos pedidos (cidade, estado e país). Uma linha por endereço.
+    columns:
+      - name: pk_endereco
+        description: Identificador único do endereço, derivado de addressid da origem
+        data_tests:
+          - unique
+          - not_null
+      - name: cidade
+        description: Nome da cidade do endereço
+      - name: nome_estado
+        description: Nome do estado ou província
+      - name: nome_pais
+        description: Nome do país

@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: bridge_pedido_motivo
+    description: Ligação entre pedidos e motivos de venda. Uma linha por par pedido-motivo.
+    columns:
+      - name: fk_pedido
+        description: Identificador do pedido
+        data_tests:
+          - not_null
+      - name: fk_motivo_venda
+        description: Identificador do motivo de venda
+        data_tests:
+          - not_null
