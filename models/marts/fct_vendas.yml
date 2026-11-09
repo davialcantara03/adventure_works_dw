@@ -1,0 +1,97 @@
+version: 2
+
+models:
+  - name: fct_vendas
+    description: >
+      Fato de vendas no grão de item do pedido (uma linha por item).
+      Origem: int_pedido_item (sales_salesorderdetail + sales_salesorderheader).
+      Métricas: quantidade, preço unitário, desconto e valor bruto da linha.
+    columns:
+      - name: pk_pedido_item
+        description: Identificador do item do pedido (salesorderdetailid).
+        data_tests:
+          - unique
+          - not_null
+
+      - name: fk_pedido
+        description: Identificador do pedido (salesorderid). Se repete por item; use count distinct para contar pedidos.
+        data_tests:
+          - not_null
+
+      - name: fk_produto
+        description: Chave para dim_produto.
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_produto')
+                field: pk_produto
+
+      - name: fk_cliente
+        description: Chave para dim_cliente.
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_cliente')
+                field: pk_cliente
+
+      - name: fk_vendedor
+        description: Chave para dim_vendedor. Nulo em pedidos sem vendedor.
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_vendedor')
+                field: pk_vendedor
+
+      - name: fk_territorio
+        description: Território associado ao pedido (confirme a origem no int).
+
+      - name: fk_cartao
+        description: Chave para dim_cartao. Nulo em pedidos sem cartão.
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_cartao')
+                field: pk_cartao
+
+      - name: fk_endereco_entrega
+        description: Chave para dim_local (endereço de entrega).
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_local')
+                field: pk_endereco
+
+      - name: fk_oferta
+        description: Oferta especial aplicada ao item, se houver.
+
+      - name: data_pedido
+        description: Data do pedido, sem hora. Usada na ligação com dim_data.
+        data_tests:
+          - not_null
+
+      - name: status
+        description: Status do pedido.
+
+      - name: quantidade
+        description: Quantidade do item (orderqty).
+        data_tests:
+          - not_null
+
+      - name: preco_unitario
+        description: Preço unitário do item (unitprice).
+        data_tests:
+          - not_null
+
+      - name: desconto_unitario
+        description: Desconto aplicado ao item (unitpricediscount).
+
+      - name: total_bruto_linha
+        description: Valor bruto da linha (preço unitário × quantidade). Base do total bruto de vendas.
+        data_tests:
+          - not_null
+
+      - name: total_liquido_linha
+        description: Valor líquido da linha (preço unitário × quantidade × (1 − desconto)).

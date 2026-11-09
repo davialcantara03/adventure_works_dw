@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: dim_produto
+    description: Produtos vendidos, com subcategoria e categoria. Uma linha por produto.
+    columns:
+      - name: pk_produto
+        description: Identificador único do produto, derivado de productid da origem.
+        data_tests:
+          - unique
+          - not_null
+      - name: nome_produto
+        description: Nome do produto.
+      - name: codigo_produto
+        description: Código comercial do produto.
+      - name: cor
+        description: Cor do produto, quando informada.
+      - name: nome_subcategoria
+        description: Subcategoria do produto.
+      - name: nome_categoria
+        description: Categoria do produto.

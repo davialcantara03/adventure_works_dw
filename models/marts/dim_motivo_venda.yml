@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: dim_motivo_venda
+    description: Motivos de venda. Um motivo pode estar associado a vários pedidos, via bridge_pedido_motivo.
+    columns:
+      - name: pk_motivo_venda
+        description: Identificador único do motivo, derivado de salesreasonid da origem
+        data_tests:
+          - unique
+          - not_null
+      - name: nome_motivo
+        description: Nome do motivo de venda
+      - name: tipo_motivo
+        description: Tipo do motivo de venda

@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: dim_vendedor
+    description: Vendedores da Adventure Works. Uma linha por vendedor, com nome.
+    columns:
+      - name: pk_vendedor
+        description: Identificador único do vendedor, derivado de businessentityid da origem
+        data_tests:
+          - unique
+          - not_null
+      - name: nome_completo
+        description: Nome completo do vendedor
+      - name: fk_territorio
+        description: Território de venda associado ao vendedor

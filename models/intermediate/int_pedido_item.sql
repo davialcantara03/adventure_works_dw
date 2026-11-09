@@ -28,7 +28,8 @@ juntado as (
         , cabecalho.subtotal
         , cabecalho.frete
         , cabecalho.total_devido
-        , item.preco_unitario * item.quantidade * (1 - item.desconto_unitario) as total_linha
+        , item.preco_unitario * item.quantidade as total_bruto_linha
+        , item.preco_unitario * item.quantidade * (1 - item.desconto_unitario) as total_liquido_linha
     from item
     left join cabecalho
         on item.fk_pedido = cabecalho.pk_pedido

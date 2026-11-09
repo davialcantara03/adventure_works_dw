@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: dim_cliente
+    description: Dimensão de clientes. Uma linha por cliente, com nome e tipo de pessoa, a partir de sales_customer e person_person.
+    columns:
+      - name: pk_cliente
+        description: Identificador único do cliente, derivado de customerid da origem
+        data_tests:
+          - unique
+          - not_null
+      - name: nome_completo
+        description: Nome completo do cliente
+      - name: tipo_pessoa
+        description: Tipo da pessoa, conforme a classificação da origem
+      - name: fk_territorio
+        description: Território de venda associado ao cliente
