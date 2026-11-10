@@ -12,7 +12,7 @@ final as (
         , fk_cliente
         , fk_vendedor
         , fk_territorio
-        , fk_cartao
+        , coalesce(fk_cartao, -1) as fk_cartao
         , fk_endereco_entrega
         , fk_oferta
         , data_pedido
