@@ -49,6 +49,12 @@ sources:
             data_tests:
               - unique
               - not_null
+      - name: sales_store
+        columns:
+          - name: businessentityid
+            data_tests:
+              - unique
+              - not_null
       - name: production_product
         columns:
           - name: productid
