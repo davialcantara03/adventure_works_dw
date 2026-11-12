@@ -9,6 +9,7 @@
 **Painel:** [CEA_AW_DAVI_dashboard.pbix](painel/CEA_AW_DAVI_dashboard.pbix)
 
 **Diagrama:** [modelo conceitual](docs/CEA_AW_DAVI_modelo_conceitual.pdf)
+
 ---
 
 ## 📑 Sumário
