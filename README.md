@@ -2,8 +2,7 @@
 
 > Projeto de **Analytics Engineering** desenvolvido na certificação **Indicium AI (Modern Analytics Stack)**. Cobre modelagem dimensional, transformação com **dbt**, testes de qualidade e painel em **Power BI**.
 
-**Autor:** Davi Alcântara · **Vídeo:** [link do vídeo] · **Painel:** `CEA_AW_DAVI_dashboard.pbix`
-
+**Autor:** Davi Alcântara · **Vídeo:** [assistir no YouTube](URL_DO_VIDEO) · **Painel:** [CEA_AW_DAVI_dashboard.pbix](painel/CEA_AW_DAVI_dashboard.pbix) · **Diagrama:** [modelo conceitual](docs/CEA_AW_DAVI_modelo_conceitual.pdf)
 ---
 
 ## 📑 Sumário
