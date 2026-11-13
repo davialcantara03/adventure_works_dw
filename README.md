@@ -4,7 +4,7 @@
 
 **Autor:** Davi Alcântara
 
-**Vídeo:** [assistir no YouTube](URL_DO_VIDEO)
+**Vídeo:** [assistir no YouTube](https://youtu.be/1Xyy8ei2Jmw)
 
 **Painel:** [CEA_AW_DAVI_dashboard.pbix](painel/CEA_AW_DAVI_dashboard.pbix)
 
