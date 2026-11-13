@@ -32,7 +32,7 @@ A Adventure Works precisa de uma base confiável para responder perguntas de ven
 
 **Principais resultados:**
 
-- ✅ **14** modelos de staging, **9** dimensões e pontes e **1** tabela fato (`fct_vendas`, com **121.317** linhas)
+- ✅ **14** modelos de staging, **7** dimensões e pontes e **1** tabela fato (`fct_vendas`, com **121.317** linhas)
 - ✅ Total bruto de vendas em **2011**: **$ 12.646.112,16**, validado por teste automatizado (valor exigido pelo CEO)
 - ✅ Total bruto de **2011 a 2014**: **$ 110.373.889,31**, com **31.465** pedidos e **274.914** unidades
 
